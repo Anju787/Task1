@@ -1,7 +1,12 @@
+import React from "react";
 import styles from "./ListRow.module.css";
 
-const ListCell = ({ children }) => {
-  return <tr className={styles.cell}>{children}</tr>;
+const ListRow = ({ children, onClick, selected }) => {
+  return (
+    <tr className={selected ? styles.selected : null} onClick={onClick}>
+      {children}
+    </tr>
+  );
 };
 
-export default ListCell;
+export default ListRow;
