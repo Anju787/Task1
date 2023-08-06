@@ -14,7 +14,7 @@ const List = ({ rows, currency, onSelectOrder }) => {
 
   const handleRowClick = (orderId) => {
     setSelectedOrderId(orderId);
-    // Call the parent component's function to handle the selected order
+   
     onSelectOrder(orderId);
   };
 
@@ -25,9 +25,9 @@ const List = ({ rows, currency, onSelectOrder }) => {
           <ListHeaderCell>Order ID</ListHeaderCell>
           <ListHeaderCell>Buy/Sell</ListHeaderCell>
           <ListHeaderCell>Country</ListHeaderCell>
-          {/* Update the table header cell label to "Order Submitted" */}
+          {}
           <ListHeaderCell>Order Submitted</ListHeaderCell>
-          {/* Update the table header cell label to display selected currency */}
+          {}
           <ListHeaderCell>Order Volume / {currency}</ListHeaderCell>
         </ListHeader>
       </thead>
@@ -38,12 +38,12 @@ const List = ({ rows, currency, onSelectOrder }) => {
             onClick={() => handleRowClick(row["&id"])}
             selected={row["&id"] === selectedOrderId}
           >
-            {/* Use row.orderSubmittedDate to display the order submitted date */}
+            {}
             <ListRowCell>{row["&id"]}</ListRowCell>
             <ListRowCell>{row.executionDetails.buySellIndicator}</ListRowCell>
             <ListRowCell>{row.executionDetails.orderStatus}</ListRowCell>
             <ListRowCell>{row.submittedDate}</ListRowCell>
-            {/* Display the Order Volume with the selected currency */}
+            {}
             <ListRowCell>{row.orderVolumeCurrency.toFixed(2)}</ListRowCell>
           </ListRow>
         ))}
